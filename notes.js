@@ -15,7 +15,7 @@ var getNote = (title) => {
 var removeNote = (title) => {
   console.log('Removing note', title);
 };
-
+// In this version of Javascript, addNote is equivalent to addNote: addNote.
 module.exports = {
   addNote,
   getAll,
