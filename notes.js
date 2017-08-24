@@ -1,5 +1,7 @@
 console.log('Starting notes.js');
 
+const fs = require('fs');
+
 var addNote = (title, body) => {
   console.log('Adding note', title, body);
   let notes = [];
@@ -18,7 +20,7 @@ var addNote = (title, body) => {
   // Unsure what this line does right now
   // Function gets called per item in array.
   // Fucntion returns T/F. If True.. add to the array "duplicateNotes".
-  var duplicateNotes = notes.filters((note) => note.title === title);
+  var duplicateNotes = notes.filter((note) => note.title === title);
 
   if (duplicateNotes.length === 0) {
     notes.push(note);
