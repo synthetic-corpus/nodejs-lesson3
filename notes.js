@@ -14,6 +14,7 @@ var addNote = (title, body) => {
   try {
     // "Try" is used here because the Json file may not exist
     var notestring = fs.readFileSync('notes-data.json');
+    notes = JSON.parse(notestring);
   } catch (e) {
     // Do nothing on an error
   }
