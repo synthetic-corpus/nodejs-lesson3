@@ -23,6 +23,8 @@ var addNote = (title, body) => {
   if (duplicateNotes.length === 0) {
     notes.push(note);
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+  } else {
+    // do Nothing. Note is already in the block, but maybe we will udpate it later.
   }
 };
 
