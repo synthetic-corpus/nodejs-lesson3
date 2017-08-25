@@ -39,7 +39,10 @@ var getNote = (title) => {
 };
 
 var removeNote = (title) => {
-  
+  let noteArray = fetchNotes();
+  // filters into toBeSaved any note does *note* match the title
+  let toBeSaved = noteArray.filter((title)=> note.title != title);
+  saveNotes(toBeSaved);
 };
 
 module.exports = {
