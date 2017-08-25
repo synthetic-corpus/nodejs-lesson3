@@ -24,7 +24,13 @@ if (command === 'add') {
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'read') {
-  notes.getNote(argv.title);
+  let reply = notes.getNote(argv.title);
+  if (typeof reply === 'object') {
+    console.log(`Title: ${reply.title}`);
+    console.log(`Body: ${reply.body}`);
+  }else{
+    console.log(reply);
+  }
 } else if (command === 'remove') {
   let reply = notes.removeNote(argv.title);
   console.log(reply);

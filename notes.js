@@ -35,7 +35,10 @@ var getAll = () => {
 };
 
 var getNote = (title) => {
-  console.log('Getting note', title);
+  let notesArray = fetchNotes();
+  let thisNote = notesArray.filter((note) => note.title === title);
+  let returnStatement = (thisNote.length > 0) ? thisNote[0] : "Title note found";
+  return returnStatement;
 };
 
 var removeNote = (title) => {
