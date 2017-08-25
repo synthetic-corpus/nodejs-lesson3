@@ -43,6 +43,11 @@ var removeNote = (title) => {
   // filters into toBeSaved any note does *note* match the title
   let toBeSaved = noteArray.filter((note) => note.title !== title);
   saveNotes(toBeSaved);
+  if (noteArray.length === toBeSaved.length) {
+    return "nothing has been removed";
+  } else{
+    return `${title} was removed`;
+  }
 };
 
 module.exports = {
