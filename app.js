@@ -16,7 +16,8 @@ console.log('Command: ', command);
 console.log('Yargs', argv);
 
 if (command === 'add') {
-  notes.addNote(argv.title, argv.body);
+  let itSays = notes.addNote(argv.title, argv.body);
+  console.log(itSays);
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'read') {

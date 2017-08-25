@@ -32,8 +32,10 @@ var addNote = (title, body) => {
   if (duplicateNotes.length === 0) {
     notes.push(note);
     saveNotes(notes);
+    return "this note, ",note.title," was saved."
   } else {
     // do Nothing. Note is already in the block, but maybe we will udpate it later.
+    return "A noted called ",note.title," already exists. Note not saved.";
   }
 };
 
