@@ -1,29 +1,25 @@
-/*
-let personString = '{"name":"Joel","age":36}';
-let personObj = JSON.parse(personString);
-console.log(typeof personObj);
-console.log(personObj)
+// var obj = {
+//   name: 'Andrew'
+// };
+// var stringObj = JSON.stringify(obj);
+// console.log(typeof stringObj);
+// console.log(stringObj);
 
-*/
+// var personString = '{"name": "Andrew","age": 25}';
+// var person = JSON.parse(personString);
+// console.log(typeof person);
+// console.log(person);
 
 const fs = require('fs');
-const json = JSON;
 
-let originalNote = {
-  title: 'A Title',
-  body: 'somebody wrote this'
-}
+var originalNote = {
+  title: 'Some title',
+  body: 'Some body'
+};
+var originalNoteString = JSON.stringify(originalNote);
+fs.writeFileSync('notes.json', originalNoteString);
 
-// Convert to string
-let originalNoteString = json.stringify(originalNote);
-
-fs.writeFileSync('theFile.json',originalNoteString);
-
-// File is now written as 'theFile'.
-// Now make a notes
-let noteString = fs.readFileSync('theFile.json');
-
-let note = json.parse(noteString);
-
+var noteString = fs.readFileSync('notes.json');
+var note = JSON.parse(noteString);
 console.log(typeof note);
 console.log(note.title);
